@@ -1,20 +1,26 @@
-const express = require('express');
-const path = require('path');
+import express from 'express';
 
-const app = express();
+// const app = express();
+// const port = process.env.port || 3001;
 
-const indexPath = path.join(__dirname, '../public');
+// app.use(express.json());
 
-app.use(express.static(indexPath));
+// app.get('', (req, res) => {
+//     res.send('<h1>HELLO</h1>');
+// });
 
-app.get('', (req, res) => {
-    res.send('<h1>HELLO</h1>');
-});
+// app.get('/about', (req, res) => {
+//     console.log(req.body);
+//     res.send(`Hello`);
+// });
 
-app.get('/about', (req, res) => {
-    res.send("hemnath's about page");
-});
+// app.listen(port, () => {
+//     console.log('Server up and running');
+// });
 
-app.listen('3001', () => {
-    console.log('Server up and running');
-});
+import mongoose from 'mongoose';
+
+mongoose.connect(
+    'mongodb+srv://justinhemnath96:Solicitarmunicion@123@cluster0.jjzotxs.mongodb.net/?retryWrites=true&w=majority',
+    { useNewUrlParser: true }
+);
