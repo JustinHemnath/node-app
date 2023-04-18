@@ -1,6 +1,7 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import { connectDB } from './src/db/mongodb.js';
+import productsRoutes from './src/routes/products.js';
 
 dotenv.config();
 
@@ -9,18 +10,7 @@ const port = process.env.port || 3001;
 
 app.use(express.json());
 
-app.get('', (req, res) => {
-    res.send('<h1>HELLO</h1>');
-});
-
-app.get('/about', (req, res) => {
-    console.log(req.body);
-    res.send(`Hello`);
-});
-
-// app.listen(port, () => {
-//     console.log('Server up and running');
-// });
+app.use('/products', productsRoutes);
 
 (async function startServer() {
     try {
@@ -29,6 +19,6 @@ app.get('/about', (req, res) => {
             console.log('Server up and running');
         });
     } catch (err) {
-        console.log(err);
+        console.log('NOT CONNECTED TO SERVER');
     }
 })();
