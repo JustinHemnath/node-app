@@ -13,12 +13,12 @@ app.use(express.json());
 app.use('/products', productsRoutes);
 
 (async function startServer() {
-    try {
-        await connectDB();
-        app.listen(port, () => {
-            console.log('Server up and running');
-        });
-    } catch (err) {
-        console.log('NOT CONNECTED TO SERVER');
-    }
+  try {
+    await connectDB();
+    app.listen(port, () => {
+      console.log('Server up and running');
+    });
+  } catch (err) {
+    console.log('NOT CONNECTED TO SERVER');
+  }
 })();
