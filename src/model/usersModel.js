@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const usersSchema = new mongoose.Schema({
     name: String,
-    age: Number,
+    // age: Number,
 });
 
 const users = mongoose.model('users', usersSchema);
