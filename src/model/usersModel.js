@@ -5,6 +5,6 @@ const usersSchema = new mongoose.Schema({
     // age: Number,
 });
 
-const users = mongoose.model('users', usersSchema);
+const users = mongoose.model('User', usersSchema, 'User');
 
 export default users;
