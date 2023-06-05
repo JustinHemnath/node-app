@@ -8,11 +8,11 @@ import chatRoute from "./src/routes/chat.js";
 dotenv.config();
 
 const app = express();
-const port = process.env.port || 3001;
+const port = process.env.port || 8001;
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:8000"],
   })
 );
 
